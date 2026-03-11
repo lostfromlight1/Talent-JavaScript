@@ -51,6 +51,27 @@ const greeting = "   Hello world!   ";
 console.log(greeting)
 console.log(trimStart(greeting))
 
+function trimEnd(str) {
+    let result = ""
+    let charfound = false
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        const char = str[i]
+
+        if (!charfound && char === " ") {
+            continue
+        }
+
+        charfound = true
+        result = char + result
+    }
+
+    return result
+}
+
+
+console.log(greeting)
+console.log(trimEnd(greeting))
 
 function includes(sentense, word) {
     for (let i = 0; i <= sentense.length - word.length; i++) {
